@@ -60,6 +60,14 @@ return {
     end,
   },
   {
+    'swaits/lazyjj.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
+    opts = {},
+    keys = {
+      { '<leader>ljj', '<cmd>LazyJJ<cr>', desc = 'Lazy Jujujtsu' },
+    },
+  },
+  {
     'kdheepak/lazygit.nvim',
     lazy = true,
     cmd = {
@@ -228,6 +236,26 @@ return {
   },
   {
     'suliatis/Jumppack.nvim',
-    config = true,
+    opts = {
+      options = {
+        global_mappings = false, -- Disable default <C-o>/<C-i> to avoid Tab conflict
+      },
+    },
+    keys = {
+      {
+        '[j',
+        function()
+          require('Jumppack').jump_back()
+        end,
+        desc = 'Jump back',
+      },
+      {
+        ']j',
+        function()
+          require('Jumppack').jump_forward()
+        end,
+        desc = 'Jump forward',
+      },
+    },
   },
 }

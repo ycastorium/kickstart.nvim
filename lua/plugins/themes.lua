@@ -7,6 +7,16 @@ return {
   },
   { 'savq/melange-nvim', lazy = false, priority = 1000 },
   {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('kanagawa').setup {
+        theme = 'wave',
+      }
+    end,
+  },
+  {
     'killitar/obscure.nvim',
     lazy = false,
     priority = 1000,
@@ -50,6 +60,7 @@ return {
     config = function()
       require('themery').setup {
         themes = {
+          'kanagawa',
           'catppuccin',
           'jellybeans',
           'monochrome',

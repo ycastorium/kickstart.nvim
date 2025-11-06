@@ -10,6 +10,16 @@ return {
     },
   },
   {
+    'ray-x/lsp_signature.nvim',
+    event = 'InsertEnter',
+    opts = {
+      bind = true,
+      handler_opts = {
+        border = 'rounded',
+      },
+    },
+  },
+  {
 
     'williamboman/mason.nvim',
     cmd = 'Mason',
@@ -94,16 +104,6 @@ return {
     opts = {
       keymap = {
         preset = 'enter',
-        ['<Tab>'] = {
-          'snippet_forward',
-          function() -- sidekick next edit suggestion
-            return require('sidekick').nes_jump_or_apply()
-          end,
-          function() -- if you are using Neovim's native inline completions
-            return vim.lsp.inline_completion.get()
-          end,
-          'fallback',
-        },
       },
       appearance = {
         nerd_font_variant = 'mono',

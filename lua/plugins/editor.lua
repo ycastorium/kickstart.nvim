@@ -1,5 +1,15 @@
 return {
   {
+    'XXiaoA/atone.nvim',
+    lazy = true,
+    event = 'VeryLazy',
+    cmd = 'Atone',
+    keys = {
+      { '<leader>at', '<cmd>Atone toggle<cr>', desc = 'Toggle Atone' },
+    },
+    opts = {}, -- your configuration here
+  },
+  {
     'otavioschwanck/arrow.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
