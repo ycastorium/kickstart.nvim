@@ -4,6 +4,9 @@ vim.g.maplocalleader = '/'
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Setup LSP logging before anything else
+require('core.lsp_log').setup()
+
 -- Load core modules
 require 'core.options'
 require 'core.keymaps'
