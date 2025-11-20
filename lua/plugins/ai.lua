@@ -3,9 +3,6 @@ return {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
-    config = function()
-      vim.g.copilot_settings = { selectedCompletionModel = 'gpt-5-copilot' }
-    end,
     opts = {
       suggestion = { enabled = false },
       panel = { enabled = false },
@@ -53,10 +50,53 @@ return {
       {
         '<leader>ap',
         function()
-          require('sidekick.cli').select_prompt()
+          require('sidekick.cli').prompt()
         end,
         desc = 'Sidekick Ask Prompt',
         mode = { 'n', 'v' },
+      },
+      {
+        '<leader>snu',
+        function()
+          require('sidekick.nes').update()
+        end,
+        desc = 'Sidekick Update NES Suggestions',
+        mode = { 'n', 'v' },
+      },
+      {
+        '<leader>snj',
+        function()
+          require('sidekick.nes').jump()
+        end,
+        desc = 'Sidekick Jump NES Suggestions',
+        mode = { 'n', 'v' },
+      },
+      {
+        '<leader>sna',
+        function()
+          require('sidekick.nes').apply()
+        end,
+        desc = 'Sidekick Apply NES Suggestions',
+        mode = { 'n', 'v' },
+      },
+    },
+  },
+  {
+    'saghen/blink.cmp',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      keymap = {
+        ['<Tab>'] = {
+          'snippet_forward',
+          function() -- sidekick next edit suggestion
+            return require('sidekick').nes_jump_or_apply()
+          end,
+          function() -- if you are using Neovim's native inline completions
+            return vim.lsp.inline_completion.get()
+          end,
+          'fallback',
+        },
       },
     },
   },

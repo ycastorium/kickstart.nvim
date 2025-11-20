@@ -372,7 +372,7 @@ return {
       {
         '<leader>p',
         function()
-          require('telescope').extensions.yank_history.yank_history {}
+          Snacks.picker.yanky()
         end,
         desc = 'Open Yank History',
       },

@@ -2,7 +2,7 @@ return {
   {
     'A7Lavinraj/fyler.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = { icon_provider = 'nvim_web_devicons' },
+    opts = { integrations = { icon = 'nvim_web_devicons' } },
     keys = {
       {
         '<leader>e',
@@ -123,18 +123,6 @@ return {
         use_git_branch = true,
         autoload = false,
         follow_cwd = true,
-        telescope = {
-          mappings = {
-            copy_session = '<C-c>',
-            change_branch = '<C-b>',
-            delete_session = '<C-d>',
-          },
-          icons = {
-            selected = ' ',
-            dir = '  ',
-            branch = ' ',
-          },
-        },
       }
     end,
   },
