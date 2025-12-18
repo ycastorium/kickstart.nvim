@@ -2,6 +2,7 @@ return {
   {
     'A7Lavinraj/fyler.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
+    branch = 'stable', -- Use stable branch for production  branch = "stable",  -- Use stable branch for production
     opts = { integrations = { icon = 'nvim_web_devicons' } },
     keys = {
       {
@@ -60,11 +61,21 @@ return {
     end,
   },
   {
-    'swaits/lazyjj.nvim',
-    dependencies = 'nvim-lua/plenary.nvim',
-    opts = {},
+    'mrdwarf7/lazyjui.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
     keys = {
-      { '<leader>ljj', '<cmd>LazyJJ<cr>', desc = 'Lazy Jujujtsu' },
+      {
+        '<Leader>jj',
+        function()
+          require('lazyjui').open()
+        end,
+        desc = 'Open Jjui',
+      },
+    },
+    opts = {
+      winblend = 69, -- If you want some level of transparency
     },
   },
   {

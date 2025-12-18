@@ -14,6 +14,12 @@ end ---@diagnostic disable-next-line: undefined-field
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Setup globals before lazy so they're available in plugin configs
+_G.Log = require 'core.log_helper'
+_G.Helpers = require 'config.helpers'
+_G.LspHelpers = require 'config.lsp_helpers'
+_G.TreeSitterUtil = require 'core.treesitter'
+
 -- Add support for the LazyFile event
 local lazy_file_events = { 'BufReadPost', 'BufNewFile', 'BufWritePre' }
 
@@ -72,6 +78,3 @@ require('lazy').setup({
     },
   },
 })
-
-_G.Helpers = require 'config.helpers'
-_G.LspHelpers = require 'config.lsp_helpers'

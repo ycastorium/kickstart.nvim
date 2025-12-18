@@ -1,0 +1,29 @@
+local M = {}
+
+local notify = function(msg, level, opts)
+  opts = opts or {}
+  opts.title = opts.title or 'Neovim'
+  vim.notify(msg, level, opts)
+end
+
+function M.info(msg, opts)
+  notify(msg, vim.log.levels.INFO, opts)
+end
+
+function M.warn(msg, opts)
+  notify(msg, vim.log.levels.WARN, opts)
+end
+
+function M.error(msg, opts)
+  notify(msg, vim.log.levels.ERROR, opts)
+end
+
+function M.debug(msg, opts)
+  notify(msg, vim.log.levels.DEBUG, opts)
+end
+
+function M.trace(msg, opts)
+  notify(msg, vim.log.levels.TRACE, opts)
+end
+
+return M
