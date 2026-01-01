@@ -128,11 +128,25 @@ return {
             opts.default_implementation(opts)
           end,
         },
+        accept = {
+          -- experimental auto-brackets support
+          auto_brackets = {
+            enabled = true,
+          },
+        },
+        menu = {
+          draw = {
+            treesitter = { 'lsp' },
+          },
+        },
         list = {
           selection = {
             preselect = false,
             auto_insert = true,
           },
+        },
+        ghost_text = {
+          enabled = vim.g.ai_cmp,
         },
       },
       sources = {

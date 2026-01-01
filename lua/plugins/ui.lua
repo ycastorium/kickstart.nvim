@@ -138,29 +138,13 @@ return {
     end,
   },
   {
-    'sindrets/diffview.nvim',
+    'esmuellert/vscode-diff.nvim',
+    branch = 'dev/next',
     lazy = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
-    cmd = { 'DiffviewOpen', 'DiffviewFileHistory' },
+    dependencies = { 'MunifTanjim/nui.nvim' },
+    cmd = 'CodeDiff',
     keys = {
-      { '<leader>dh', '<cmd>DiffviewFileHistory<cr>', desc = 'File History' },
-    },
-    opts = {
-      view = {
-        default = {
-          layout = 'diff2_horizontal',
-        },
-        merge_tool = {
-          layout = 'diff3_horizontal',
-          disable_diagnostics = true,
-        },
-        file_history = {
-          layout = 'diff2_horizontal',
-        },
-      },
+      { '<leader>cd', '<cmd>CodeDiff<cr>', desc = 'File History' },
     },
   },
   {
