@@ -138,26 +138,19 @@ return {
     end,
   },
   {
-    'esmuellert/vscode-diff.nvim',
-    branch = 'dev/next',
+    'esmuellert/codediff.nvim',
     lazy = true,
     dependencies = { 'MunifTanjim/nui.nvim' },
     cmd = 'CodeDiff',
     keys = {
-      { '<leader>cd', '<cmd>CodeDiff<cr>', desc = 'File History' },
+      { '<leader>cdm', '<cmd>CodeDiff master<cr>', desc = 'File History' },
     },
   },
   {
     'mistricky/codesnap.nvim',
-    build = 'make',
     lazy = true,
-    config = function()
-      require('codesnap').setup {
-        has_breadcrumbs = false,
-        watermark = '',
-        save_path = '~/Pictures/CodeSnap',
-      }
-    end,
+    tag = 'v2.0.0',
+    cmd = { 'CodeSnap', 'CodeSnapSave', 'CodeSnapASCII' },
   },
   {
     'OXY2DEV/markview.nvim',
@@ -216,29 +209,5 @@ return {
   {
     'j-hui/fidget.nvim',
     opts = {},
-  },
-  {
-    'suliatis/Jumppack.nvim',
-    opts = {
-      options = {
-        global_mappings = false, -- Disable default <C-o>/<C-i> to avoid Tab conflict
-      },
-    },
-    keys = {
-      {
-        '[j',
-        function()
-          require('Jumppack').jump_back()
-        end,
-        desc = 'Jump back',
-      },
-      {
-        ']j',
-        function()
-          require('Jumppack').jump_forward()
-        end,
-        desc = 'Jump forward',
-      },
-    },
   },
 }

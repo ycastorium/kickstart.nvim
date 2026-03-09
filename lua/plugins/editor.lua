@@ -10,32 +10,6 @@ return {
     opts = {}, -- your configuration here
   },
   {
-    'obsidian-nvim/obsidian.nvim',
-    version = '*',
-    cmd = 'Obsidian',
-    event = {
-      'BufReadPre ' .. vim.fn.expand '~' .. '/vaults/**/*.md',
-      'BufNewFile ' .. vim.fn.expand '~' .. '/vaults/**/*.md',
-    },
-    keys = {
-      { '<leader>ntc', '<cmd>Obsidian<cr>', desc = 'Toggle Obsidian Options' },
-    },
-    ---@module 'obsidian'
-    ---@type obsidian.config
-    opts = {
-      workspaces = {
-        {
-          name = 'personal',
-          path = '~/vaults/personal',
-        },
-        {
-          name = 'grain',
-          path = '~/vaults/grain',
-        },
-      },
-    },
-  },
-  {
     'otavioschwanck/arrow.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
@@ -679,6 +653,33 @@ return {
             }
           end,
         },
+      },
+    },
+  },
+  {
+    'WilliamHsieh/overlook.nvim',
+    opts = {},
+    keys = {
+      {
+        '<leader>pd',
+        function()
+          require('overlook.api').peek_definition()
+        end,
+        desc = 'Overlook: Peek definition',
+      },
+      {
+        '<leader>pc',
+        function()
+          require('overlook.api').close_all()
+        end,
+        desc = 'Overlook: Close all popup',
+      },
+      {
+        '<leader>pu',
+        function()
+          require('overlook.api').restore_popup()
+        end,
+        desc = 'Overlook: Restore popup',
       },
     },
   },

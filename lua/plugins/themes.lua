@@ -1,5 +1,9 @@
 return {
-  { 'kdheepak/monochrome.nvim', lazy = false, priority = 1001 },
+  {
+    'oskarnurm/koda.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   {
     'wtfox/jellybeans.nvim',
     lazy = false,
@@ -22,12 +26,12 @@ return {
     priority = 1000,
   },
   {
-    'slugbyte/lackluster.nvim',
+    'ribru17/bamboo.nvim',
     lazy = false,
     priority = 1000,
   },
   {
-    'ribru17/bamboo.nvim',
+    'sainnhe/gruvbox-material',
     lazy = false,
     priority = 1000,
   },
@@ -63,11 +67,11 @@ return {
           'kanagawa',
           'catppuccin',
           'jellybeans',
-          'monochrome',
+          'gruvbox-material',
+          'koda',
           'melange',
           'obscure',
           'bamboo',
-          'lackluster',
           'NeoSolarized',
           'kanso',
           'rose-pine',
