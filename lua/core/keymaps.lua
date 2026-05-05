@@ -25,6 +25,12 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Resize vertical splits to 70/30
+vim.keymap.set('n', '<leader>s7', function()
+  local width = vim.o.columns
+  vim.cmd('vertical resize ' .. math.floor(width * 0.7))
+end, { desc = 'Resize split 70/30' })
+
 -- Keep visual mode after indenting
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and keep selection' })
 vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and keep selection' })
@@ -36,6 +42,10 @@ vim.keymap.set('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'Move Down' })
 vim.keymap.set('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'Move Up' })
 vim.keymap.set('v', '<A-j>', ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = 'Move Down' })
 vim.keymap.set('v', '<A-k>', ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = 'Move Up' })
+
+-- Git Blame
+vim.keymap.set('n', '<leader>gb', function() require('gitsigns').blame_line { full = true } end, { desc = 'Git blame line' })
+vim.keymap.set('n', '<leader>gB', function() require('gitsigns').blame() end, { desc = 'Git blame buffer' })
 
 -- Better Searh
 vim.keymap.set('n', 'n', "'Nn'[v:searchforward].'zv'", { expr = true, desc = 'Next Search Result' })
