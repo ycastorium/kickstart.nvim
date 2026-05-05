@@ -56,28 +56,47 @@ return {
         mode = { 'n', 'v' },
       },
       {
-        '<leader>snu',
+        '<leader>at',
         function()
-          require('sidekick.nes').update()
+          require('sidekick.cli').send { msg = '{this}' }
         end,
-        desc = 'Sidekick Update NES Suggestions',
-        mode = { 'n', 'v' },
+        mode = { 'x', 'n' },
+        desc = 'Send This',
       },
       {
-        '<leader>snj',
+        '<leader>af',
         function()
-          require('sidekick.nes').jump()
+          require('sidekick.cli').send { msg = '{file}' }
         end,
-        desc = 'Sidekick Jump NES Suggestions',
-        mode = { 'n', 'v' },
+        desc = 'Send File',
       },
       {
-        '<leader>sna',
+        '<leader>av',
         function()
-          require('sidekick.nes').apply()
+          require('sidekick.cli').send { msg = '{selection}' }
         end,
-        desc = 'Sidekick Apply NES Suggestions',
-        mode = { 'n', 'v' },
+        mode = { 'x' },
+        desc = 'Send Visual Selection',
+      },
+    },
+  },
+  {
+    'saghen/blink.cmp',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+
+      keymap = {
+        ['<Tab>'] = {
+          'snippet_forward',
+          function() -- sidekick next edit suggestion
+            return require('sidekick').nes_jump_or_apply()
+          end,
+          function() -- if you are using Neovim's native inline completions
+            return vim.lsp.inline_completion.get()
+          end,
+          'fallback',
+        },
       },
     },
   },
