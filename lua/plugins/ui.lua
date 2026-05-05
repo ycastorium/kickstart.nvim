@@ -118,9 +118,6 @@ return {
         adapters = {
           require 'neotest-elixir',
         },
-        consumers = {
-          overseer = require 'neotest.consumers.overseer',
-        },
       }
     end,
   },
@@ -151,11 +148,6 @@ return {
     lazy = true,
     tag = 'v2.0.0',
     cmd = { 'CodeSnap', 'CodeSnapSave', 'CodeSnapASCII' },
-  },
-  {
-    'OXY2DEV/markview.nvim',
-    lazy = true,
-    cmd = { 'MarkviewOpen', 'MarkviewToggle' },
   },
   {
     'folke/snacks.nvim',
