@@ -146,7 +146,7 @@ return {
   {
     'mistricky/codesnap.nvim',
     lazy = true,
-    tag = 'v2.0.0',
+    tag = 'v2.0.1',
     cmd = { 'CodeSnap', 'CodeSnapSave', 'CodeSnapASCII' },
   },
   {

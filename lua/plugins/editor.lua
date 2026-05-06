@@ -484,19 +484,6 @@ return {
     },
   },
   {
-    'natecraddock/workspaces.nvim',
-    lazy = true,
-    cmd = { 'WorkspacesAdd', 'WorkspacesRemove', 'WorkspacesList' },
-    keys = {
-      { '<leader>wa', '<cmd>WorkspacesAdd<cr>', desc = 'Add Workspace' },
-      { '<leader>wr', '<cmd>WorkspacesRemove<cr>', desc = 'Add Workspace' },
-      { '<leader>wl', '<cmd>WorkspacesList<cr>', desc = 'List Workspaces' },
-    },
-    config = function()
-      require('workspaces').setup()
-    end,
-  },
-  {
     'nvim-focus/focus.nvim',
     version = '*',
     config = function()

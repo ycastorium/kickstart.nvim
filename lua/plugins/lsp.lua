@@ -393,4 +393,8 @@ return {
     },
     opts = {},
   },
+  {
+    'error311/wayfinder.nvim',
+    opts = {},
+  },
 }
