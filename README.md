@@ -11,14 +11,16 @@
 4. Erlang
 5. Gleam
 6. C/C++ (clangd)
-7. Helm
-8. Java
-9. JSON
-10. Kotlin
-11. Markdown
-12. Python
-13. Tailwind CSS
-14. Terraform
+7. C# (Roslyn)
+8. F# (FsAutoComplete)
+9. Helm
+10. Java
+11. JSON
+12. Kotlin
+13. Markdown
+14. Python
+15. Tailwind CSS
+16. Terraform
 
 ## ✨ Installed Plugins
 
