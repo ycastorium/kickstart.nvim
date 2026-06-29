@@ -1,9 +1,16 @@
 return {
   {
-    'A7Lavinraj/fyler.nvim',
+    'FylerOrg/fyler.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    branch = 'stable', -- Use stable branch for production  branch = "stable",  -- Use stable branch for production
-    opts = { integrations = { icon = 'nvim_web_devicons' } },
+    opts = {
+      integrations = { icon = 'nvim_web_devicons' },
+      ui = {
+        hidden_items = {
+          switches = {},
+        },
+        indent_guides = true,
+      },
+    },
     keys = {
       {
         '<leader>e',
@@ -140,7 +147,7 @@ return {
     dependencies = { 'MunifTanjim/nui.nvim' },
     cmd = 'CodeDiff',
     keys = {
-      { '<leader>cdm', '<cmd>CodeDiff master<cr>', desc = 'File History' },
+      { '<leader>cdm', '<cmd>CodeDiff master...<cr>', desc = 'PR Codediff' },
     },
   },
   {
